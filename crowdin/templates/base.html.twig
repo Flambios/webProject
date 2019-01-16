@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome to CrowCrowdin!{% endblock %}</title>
+    </head>
+    <body>
+    {% block body %}<h1><a href="{{ path ('base') }}">CrowCrowdin</a></h1>
+        {% include('nav.html.twig') %}
+        <header class="header">
+
+        </header>
+
+    {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

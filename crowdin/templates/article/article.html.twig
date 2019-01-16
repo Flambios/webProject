@@ -1,0 +1,18 @@
+{% block body %}
+
+    <section class="articles">
+        {% for article in articles %}
+            <article>
+                <h2>{{ article.title }}</h2>
+                <div class="metata">Ecrit le {{ article.createdAt | date ('d/m/y') }} à {{ article.createdAt | date('H:i') }} dans la categorie </div>
+                <div class="content">
+                    <img src="{{ article.image }}" alt="">
+                    {{ article.content | raw }}
+                    <a href="{{ path('articles')}}" class="btn btn-primary">Lire la suite</a>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+
+{% endblock %}
+

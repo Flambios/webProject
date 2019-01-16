@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+
+    <h1>Adding a new csv file</h1>
+
+    {{ form_start(form) }}
+    {# ... #}
+
+    {{ form_row(form.code) }}
+    <input type="submit" value="Import" />
+    {{ form_end(form) }}
+
+{% endblock %}
+

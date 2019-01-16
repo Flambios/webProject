@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        li {display: inline;
+            text-align: center;}
+        h3 {display: inline;
+            text-align: center;}
+    </style>
+    <ul class="navi">
+        <li><a href="{{ path ('base') }}">Home</a></li>
+        <li><h3>Articles:</h3></li>
+        <li><a href="{{ path ('articles') }}">Article</a></li>
+        <li><a href="{{ path ('newarticle') }}">Créer une nouvelle article</a></li>
+        <li><h3>Projects:</h3></li>
+        <li><a href="{{ path ('project_index') }}">Project</a></li>
+
+        <li><a href="{{ path ('project_new') }}">Créer un nouveau projet</a></li>
+        <li><h3>Source:</h3></li>
+        <li><a href="{{ path ('source_index') }}">Tous les sources</a></li>
+        <li><a href="{{ path ('source_new') }}">Ajouter une source</a></li>
+
+        <li><a href="{{ path ('source_csv') }}">Importer une source</a></li>
+    </ul>
+    <ul>
+
+        <li>
+            {% if is_granted('ROLE_USER') %}
+        <li><h3>Profil:</h3></li>
+        <li><a href="{{ path('profil') }}">Profil</a></li>
+                {% embed 'user/logout.html.twig' %}
+                {% endembed %}
+            {% else %}
+                {% embed 'user/login.html.twig' %}
+                {% endembed %}
+            {% endif %}</li>
+        <li>{% embed 'user/register.html.twig' %}
+            {% endembed %}</li>
+    </ul>
+{% endblock %}

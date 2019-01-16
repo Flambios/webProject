@@ -1,0 +1,45 @@
+base:
+   path: /
+   controller: App\Controller\PageController::homepage
+
+login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+showlogin:
+  path: /showlogin
+  controller: App\Controller\PageController::showlogin
+
+registration:
+  path: /registration
+  controller: App\Controller\RegistrationController::register
+
+logout:
+  path: /logout
+  controller: App\Controller\PageController::logout
+
+profil:
+  path: /profil
+  controller: App\Controller\PageController::showprofil
+
+newarticle:
+  path: /create
+  controller: App\Controller\ArticleController::createArticle
+
+articles:
+  path: /articles
+  controller: App\Controller\ArticleController::showarticles
+
+project_index:
+  path: /projects
+  controller: App\Controller\ProjectController::indexAction
+
+project_new:
+  path: /new_projects
+  controller: App\Controller\ProjectController::newAction
+
+fos_user:
+  resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+app_logout:
+  path: /logout
